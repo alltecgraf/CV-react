@@ -40,20 +40,32 @@ export default function Practical() {
     }
 
     return (
-        <div>
+        <div  className='container'>
             <div>
-                <div>Practical Experience:</div>
+                <div style={{
+                    fontWeight: 'bold',
+                    fontSize: '18px',
+                    marginBottom: '3px'
+                }}>Practical Experience:</div>
                 <div style={textDisplay}>{'Company: ' + displayText.company}</div>
                 <div style={textDisplay}>{'Position: ' + displayText.position}</div>
                 <div style={textDisplay}>{'Worked from: ' + displayText.startDate}</div>
-                <div style={textDisplay}>{'Until: ' + displayText.finishDate}</div>
+                <div style={textDisplay}>{'Worked until: ' + displayText.finishDate}</div>
             </div>
             <div>
                 <form onSubmit={handleSubmit}>
                     <input style={inputDisplay} placeholder='Company Title' type='text' onChange={handleCompanyInput} />
                     <input style={inputDisplay} placeholder='Job Title' type='text' onChange={handlePositionInput} />
-                    <input style={inputDisplay} placeholder='worked from' type='date' onChange={handleStartDateInput} />
-                    <input style={inputDisplay} placeholder='worked until' type='date' onChange={handleFinishDateInput} />
+                    <div
+                        style={inputDisplay}>
+                        From:
+                        <input type='date' onChange={handleStartDateInput} />
+                    </div>
+                    <div
+                        style={inputDisplay}>
+                        Until:
+                        <input type='date' onChange={handleFinishDateInput} />
+                    </div>
                     <button text='edit' disabled={disableEdit} onClick={handleEdit}>Edit</button>
                     <button text='submit' disabled={infoSubmitted} type='submit'>Submit</button>
                 </form>

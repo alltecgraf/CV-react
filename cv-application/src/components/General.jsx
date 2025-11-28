@@ -31,9 +31,13 @@ export default function General() {
     }
 
     return (
-        <div className='container'>
+        <div  className='container'>
             <div>
-                <div>General Information:</div>
+                <div style={{
+                    fontWeight: 'bold',
+                    fontSize: '18px',
+                    marginBottom: '3px'
+                }}>General Information:</div>
                 <div style={textDisplay}>{'Name: ' + displayText.name}</div>
                 <div style={textDisplay}>{'E-mail: ' + displayText.email}</div>
                 <div style={textDisplay}>{'Phone: ' + displayText.phone}</div>
